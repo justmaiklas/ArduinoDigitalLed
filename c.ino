@@ -31,13 +31,13 @@ void setup() {
   FastLED.clear();
   /* for (int i = 0; i <= NUM_LEDS; i++)
     {
-     leds[i] = CRGB (255, 0, 0);
+     leds[i] = CRGB (0, 255, 255);
     }
     delay(2000);
     FastLED.clear();
   */for (int i = 0; i <= NUM_LEDS; i++)
   {
-    leds[i] = CRGB (0, 0, 255);
+    leds[i] = CRGB (255, 0, 0);
 
 
   }
@@ -100,8 +100,8 @@ bool change = true;
 void melynaraudona () {
   if (turn_on)
   {
-    leds[_i] = CRGB(255, 0, 0);
-    leds[__i] = CRGB(255, 0, 0);
+    leds[_i] = CRGB(0, 255, 255);
+    leds[__i] = CRGB(0, 255, 255);
     __i += __it;
     _i += it;
     change = true;
@@ -109,12 +109,12 @@ void melynaraudona () {
   } else {
 
     if (it == -1) {
-      leds[_i - tempnum] = CRGB(0, 0, 255);
-      leds[__i + tempnum] = CRGB(0, 0, 255);
+      leds[_i - tempnum] = CRGB(255, 0, 0);
+      leds[__i + tempnum] = CRGB(255, 0, 0);
     }
     else {
-      leds[_i + tempnum] = CRGB(0, 0, 255);
-      leds[__i - tempnum] = CRGB(0, 0, 255);
+      leds[_i + tempnum] = CRGB(255, 0, 0);
+      leds[__i - tempnum] = CRGB(255, 0, 0);
     }
 
     tempnum--;
@@ -130,10 +130,10 @@ void melynaraudona () {
 
 
   if (_i >= _tnum && it == 1)
-    leds[_i - _tnum] = CRGB(0, 0, 255);
+    leds[_i - _tnum] = CRGB(255, 0, 0);
   else if (_i <= 299 - _tnum && it == -1)
   {
-    leds[_i + _tnum] = CRGB(0, 0, 255);
+    leds[_i + _tnum] = CRGB(255, 0, 0);
 
   }
   if (_i == NUM_LEDS && turn_on && change) {
@@ -152,9 +152,9 @@ void melynaraudona () {
   //---------------------------------//
 
   if (__i >= _tnum && __it == 1)
-    leds[__i - _tnum] = CRGB(0, 0, 255);
+    leds[__i - _tnum] = CRGB(255, 0, 0);
   else if (__i <= 299 - _tnum && __it == -1)
-    leds[__i + _tnum] = CRGB(0, 0, 255);
+    leds[__i + _tnum] = CRGB(255, 0, 0);
   if (__i == NUM_LEDS && turn_on && change) {
     __it = -1;
   }
@@ -169,12 +169,12 @@ void melynaraudona () {
 void melynaraudonatemp () {
   for (int i = 0; i <= NUM_LEDS / 2 - 1; i++) {
     leds[i] = CRGB(0, 0, 0);
-    leds[NUM_LEDS - 1 - i] = CRGB(0, 0, 255);
+    leds[NUM_LEDS - 1 - i] = CRGB(255, 0, 0);
   }
   FastLED.show();
   delay(150);
   for (int i = 0; i <= NUM_LEDS / 2 - 1; i++) {
-    leds[i] = CRGB(255, 0, 0);
+    leds[i] = CRGB(0, 255, 255);
     leds[NUM_LEDS - 1 - i] = CRGB(0, 0, 0);
   }
   FastLED.show();
@@ -310,7 +310,7 @@ void loop() {
 
      FastLED.show();delay(50);
     }*/
-   // fill_solid( leds, NUM_LEDS /*number of leds*/, CRGB (0, 0, 255));
+   // fill_solid( leds, NUM_LEDS /*number of leds*/, CRGB (255, 0, 0));
      // FastLED.show();
   melynaraudona();
 
